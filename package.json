@@ -1,0 +1,15 @@
+{
+  "name": "petpal-web",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["apps/*"],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "preview": "turbo run preview"
+  },
+  "devDependencies": {
+    "turbo": "^1.13.3"
+  }
+}
