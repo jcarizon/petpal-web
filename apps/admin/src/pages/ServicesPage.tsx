@@ -1,124 +1,131 @@
-import { useState } from 'react'
-import { Plus, Pencil, Trash2, CheckCircle, XCircle } from 'lucide-react'
+import { CheckCircle2, MapPin, Star } from 'lucide-react'
 
 interface Service {
   id: string
   name: string
   type: string
-  location: string
-  status: 'active' | 'inactive'
+  badge: string
+  badgeColor: string
   verified: boolean
   rating: number
+  reviews: number
+  distance: string
 }
 
 const MOCK_SERVICES: Service[] = [
-  { id: '1', name: 'PetCare Veterinary Clinic', type: 'Veterinarian', location: 'Makati, Manila', status: 'active', verified: true, rating: 4.9 },
-  { id: '2', name: 'Fluffy Paws Grooming', type: 'Groomer', location: 'BGC, Taguig', status: 'active', verified: true, rating: 4.8 },
-  { id: '3', name: 'Happy Tails Pet Hotel', type: 'Pet Hotel', location: 'Pasig City', status: 'active', verified: false, rating: 4.7 },
-  { id: '4', name: 'City Vet Animal Clinic', type: 'Veterinarian', location: 'Quezon City', status: 'inactive', verified: false, rating: 4.2 },
+  {
+    id: '1',
+    name: 'PetCare Veterinary Clinic',
+    type: 'Veterinarian',
+    rating: 4.9,
+    reviews: 124,
+    distance: '0.3 km',
+    verified: true,
+    badge: 'Top Rated',
+    badgeColor: '#8B5CF6',
+  },
+  {
+    id: '2',
+    name: 'Fluffy Paws Grooming',
+    type: 'Pet Groomer',
+    rating: 4.8,
+    reviews: 89,
+    distance: '0.7 km',
+    verified: true,
+    badge: 'Verified',
+    badgeColor: '#10B981',
+  },
+  {
+    id: '3',
+    name: 'Happy Tails Pet Hotel',
+    type: 'Pet Hotel',
+    rating: 4.7,
+    reviews: 56,
+    distance: '1.2 km',
+    verified: true,
+    badge: 'New',
+    badgeColor: '#3B82F6',
+  },
+  {
+    id: '4',
+    name: 'Paw Haven Veterinary Center',
+    type: 'Veterinarian',
+    rating: 4.9,
+    reviews: 102,
+    distance: '1.8 km',
+    verified: true,
+    badge: 'Top Rated',
+    badgeColor: '#8B5CF6',
+  },
+  {
+    id: '5',
+    name: 'Snip & Shine Grooming',
+    type: 'Pet Groomer',
+    rating: 4.6,
+    reviews: 64,
+    distance: '2.1 km',
+    verified: true,
+    badge: 'Popular',
+    badgeColor: '#F59E0B',
+  },
+  {
+    id: '6',
+    name: 'Cuddle Stay Pet Boarding',
+    type: 'Pet Hotel',
+    rating: 4.8,
+    reviews: 78,
+    distance: '2.7 km',
+    verified: true,
+    badge: 'Verified',
+    badgeColor: '#10B981',
+  },
 ]
 
 export default function ServicesPage() {
-  const [services, setServices] = useState(MOCK_SERVICES)
-  const [showForm, setShowForm] = useState(false)
-  const [newService, setNewService] = useState({ name: '', type: 'Veterinarian', location: '' })
-
-  const toggleVerified = (id: string) => {
-    setServices((prev) => prev.map((s) => s.id === id ? { ...s, verified: !s.verified } : s))
-  }
-
-  const deleteService = (id: string) => {
-    setServices((prev) => prev.filter((s) => s.id !== id))
-  }
-
-  const addService = () => {
-    if (!newService.name || !newService.location) return
-    setServices((prev) => [...prev, {
-      id: String(Date.now()),
-      ...newService,
-      status: 'active',
-      verified: false,
-      rating: 0,
-    }])
-    setNewService({ name: '', type: 'Veterinarian', location: '' })
-    setShowForm(false)
-  }
-
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div>
         <div>
-          <h2 className="text-2xl font-bold text-gray-900">Service Management</h2>
-          <p className="text-gray-500 text-sm mt-1">Manage service listings</p>
-        </div>
-        <button onClick={() => setShowForm(!showForm)} className="btn-primary flex items-center gap-2">
-          <Plus className="w-4 h-4" /> Add Service
-        </button>
-      </div>
-
-      {showForm && (
-        <div className="card">
-          <h3 className="font-semibold text-gray-900 mb-4">Add New Service</h3>
-          <div className="grid md:grid-cols-3 gap-4">
-            <input className="input" placeholder="Service name" value={newService.name} onChange={(e) => setNewService({ ...newService, name: e.target.value })} />
-            <select className="input" value={newService.type} onChange={(e) => setNewService({ ...newService, type: e.target.value })}>
-              <option>Veterinarian</option>
-              <option>Groomer</option>
-              <option>Pet Hotel</option>
-              <option>Pet Store</option>
-            </select>
-            <input className="input" placeholder="Location" value={newService.location} onChange={(e) => setNewService({ ...newService, location: e.target.value })} />
-          </div>
-          <div className="flex gap-2 mt-4">
-            <button onClick={addService} className="btn-primary">Add Service</button>
-            <button onClick={() => setShowForm(false)} className="btn-secondary">Cancel</button>
-          </div>
-        </div>
-      )}
-
-      <div className="card">
-        <div className="overflow-x-auto">
-          <table className="w-full">
-            <thead>
-              <tr>
-                <th className="table-header text-left">Name</th>
-                <th className="table-header text-left">Type</th>
-                <th className="table-header text-left">Location</th>
-                <th className="table-header text-left">Rating</th>
-                <th className="table-header text-left">Verified</th>
-                <th className="table-header text-left">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {services.map((service) => (
-                <tr key={service.id} className="hover:bg-gray-50">
-                  <td className="table-cell font-medium text-gray-900">{service.name}</td>
-                  <td className="table-cell text-gray-500">{service.type}</td>
-                  <td className="table-cell text-gray-500">{service.location}</td>
-                  <td className="table-cell">{service.rating > 0 ? `⭐ ${service.rating}` : '—'}</td>
-                  <td className="table-cell">
-                    <button onClick={() => toggleVerified(service.id)} className="flex items-center gap-1">
-                      {service.verified
-                        ? <CheckCircle className="w-5 h-5 text-green-500" />
-                        : <XCircle className="w-5 h-5 text-gray-300" />}
-                    </button>
-                  </td>
-                  <td className="table-cell">
-                    <div className="flex items-center gap-1">
-                      <button className="p-1.5 text-blue-500 hover:bg-blue-50 rounded-lg">
-                        <Pencil className="w-4 h-4" />
-                      </button>
-                      <button onClick={() => deleteService(service.id)} className="p-1.5 text-red-500 hover:bg-red-50 rounded-lg">
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <h2 className="text-2xl font-bold text-gray-900">Services List</h2>
+          <p className="text-gray-500 text-sm mt-1">Trusted and verified services near users</p>
         </div>
       </div>
-    </div>
+
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {MOCK_SERVICES.map((service) => (
+          <article key={service.id} className="rounded-2xl border border-gray-200 bg-white p-5">
+            <div className="mb-5 flex items-start justify-between gap-3">
+              <div>
+                <span
+                  className="inline-flex rounded-full px-3 py-1 text-xs font-semibold text-white"
+                  style={{ backgroundColor: service.badgeColor }}
+                >
+                  {service.badge}
+                </span>
+                <h3 className="mt-3 text-2xl font-semibold text-gray-900">{service.name}</h3>
+                <p className="mt-1 text-xl text-gray-500">{service.type}</p>
+              </div>
+              {service.verified ? <CheckCircle2 className="h-8 w-8 shrink-0 text-emerald-500" /> : null}
+            </div>
+
+            <div className="flex items-center gap-6 text-lg text-gray-600">
+              <div className="flex items-center gap-1.5">
+                <Star className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                <span className="font-medium text-gray-800">{service.rating.toFixed(1)}</span>
+                <span className="text-gray-400">({service.reviews})</span>
+              </div>
+              <div className="flex items-center gap-1.5 text-violet-500">
+                <MapPin className="h-5 w-5" />
+                <span>{service.distance}</span>
+              </div>
+            </div>
+
+            <button className="mt-5 w-full rounded-xl border border-violet-500 py-2.5 text-lg font-semibold text-violet-500 hover:bg-violet-50">
+              View Details
+            </button>
+          </article>
+        ))}
+      </div>
+        </div>
   )
 }
