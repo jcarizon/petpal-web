@@ -2,9 +2,24 @@ import { PawPrint, Facebook, Twitter, Instagram, Youtube } from 'lucide-react'
 import { APP_NAME } from '../../lib/constants'
 
 const FOOTER_LINKS = {
-  Product: ['Features', 'How It Works', 'Pricing', 'Download'],
-  Company: ['About Us', 'Blog', 'Careers', 'Press'],
-  Support: ['Help Center', 'Contact Us', 'Privacy Policy', 'Terms of Service'],
+  Product: [
+    { label: 'Features', href: '#features' },
+    { label: 'How It Works', href: '#how-it-works' },
+    { label: 'Pricing', href: '#' },
+    { label: 'Download', href: '#' },
+  ],
+  Company: [
+    { label: 'About Us', href: '#' },
+    { label: 'Blog', href: '#' },
+    { label: 'Careers', href: '#' },
+    { label: 'Press', href: '#' },
+  ],
+  Support: [
+    { label: 'Help Center', href: '#' },
+    { label: 'Contact Us', href: '#' },
+    { label: 'Privacy Policy', href: '/privacy.html' },
+    { label: 'Terms of Service', href: '/terms.html' },
+  ],
 }
 
 const SOCIAL_LINKS = [
@@ -50,9 +65,9 @@ export default function Footer() {
               <h3 className="font-semibold text-white mb-3">{category}</h3>
               <ul className="space-y-2">
                 {links.map((link) => (
-                  <li key={link}>
-                    <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                      {link}
+                  <li key={link.label}>
+                    <a href={link.href} className="text-gray-400 hover:text-white text-sm transition-colors">
+                      {link.label}
                     </a>
                   </li>
                 ))}

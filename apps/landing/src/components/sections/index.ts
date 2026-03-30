@@ -1,0 +1,9 @@
+export { default as HeroSection } from './HeroSection';
+export { default as FeaturesSection } from './FeaturesSection';
+export { default as HowItWorksSection } from './HowItWorksSection';
+export { default as ServicesSection } from './ServicesSection';
+export { default as GamificationSection } from './GamificationSection';
+export { default as LostFoundSection } from './LostFoundSection';
+export { default as CTASection } from './CTASection';
+export { default as PrivacyPolicy } from './PrivacyPolicy';
+export { default as TermsOfService } from './TermsOfService';
