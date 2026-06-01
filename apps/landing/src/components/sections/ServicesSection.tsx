@@ -3,7 +3,7 @@ import { SERVICES } from '../../lib/constants'
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-primary-bg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="section-title">Trusted services near you</h2>
@@ -16,7 +16,7 @@ export default function ServicesSection() {
           {SERVICES.map((service) => (
             <div
               key={service.name}
-              className="rounded-2xl border border-gray-100 p-6 hover:shadow-lg transition-shadow duration-300"
+              className="rounded-2xl border border-border p-6 hover:shadow-lg transition-shadow duration-300 bg-white"
             >
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -26,19 +26,19 @@ export default function ServicesSection() {
                   >
                     {service.badge}
                   </span>
-                  <h3 className="font-semibold text-gray-900">{service.name}</h3>
-                  <p className="text-sm text-gray-500">{service.type}</p>
+                  <h3 className="font-semibold text-textPrimary">{service.name}</h3>
+                  <p className="text-sm text-textSecondary">{service.type}</p>
                 </div>
                 {service.verified && (
-                  <CheckCircle className="w-5 h-5 text-green-500 shrink-0" />
+                  <CheckCircle className="w-5 h-5 text-success shrink-0" />
                 )}
               </div>
 
-              <div className="flex items-center gap-4 text-sm text-gray-600">
+              <div className="flex items-center gap-4 text-sm text-textSecondary">
                 <div className="flex items-center gap-1">
-                  <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                  <Star className="w-4 h-4 fill-secondary-light text-secondary-light" />
                   <span className="font-medium">{service.rating}</span>
-                  <span className="text-gray-400">({service.reviews})</span>
+                  <span className="text-textDisabled">({service.reviews})</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <MapPin className="w-4 h-4 text-primary" />

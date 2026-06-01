@@ -31,33 +31,33 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <a href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <PawPrint className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-primary-light">{APP_NAME}</span>
-            </a>
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              Never forget your pet's health. Track vaccinations, find trusted services, and connect with the pet-loving community.
-            </p>
-            <div className="flex gap-3">
-              {SOCIAL_LINKS.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  aria-label={social.label}
-                  className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary-light hover:bg-gray-700 transition-colors"
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
-            </div>
-          </div>
+<footer className="bg-textPrimary text-white">
+       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+           {/* Brand */}
+           <div className="lg:col-span-2">
+             <a href="/" className="flex items-center gap-2 mb-4">
+               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+                 <PawPrint className="w-5 h-5 text-white" />
+               </div>
+               <span className="text-xl font-bold text-primary-light">{APP_NAME}</span>
+             </a>
+             <p className="text-gray-400 text-sm leading-relaxed mb-4">
+               Never forget your pet's health. Track vaccinations, find trusted services, and connect with the pet-loving community.
+             </p>
+             <div className="flex gap-3">
+               {SOCIAL_LINKS.map((social) => (
+                 <a
+                   key={social.label}
+                   href={social.href}
+                   aria-label={social.label}
+                   className="w-9 h-9 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:text-primary-light hover:bg-gray-700 transition-colors"
+                 >
+                   <social.icon className="w-4 h-4" />
+                 </a>
+               ))}
+             </div>
+           </div>
 
           {/* Links */}
           {Object.entries(FOOTER_LINKS).map(([category, links]) => (

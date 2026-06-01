@@ -17,7 +17,7 @@ const DIFFERENTIATORS = [
     icon: MapPin,
     title: 'Smart Geofencing',
     description: 'Set safe zones and get instant alerts when your pet leaves the area.',
-    color: '#EF4444',
+    color: '#0F8554',
   },
 ]
 
@@ -28,26 +28,26 @@ export default function LostFoundSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Alert mockup */}
           <div className="flex justify-center">
-            <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl p-8 max-w-sm w-full">
+            <div className="bg-gradient-to-br from-primary-bg to-white rounded-3xl p-8 max-w-sm w-full">
               <div className="bg-white rounded-2xl shadow-lg p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-danger/10 rounded-full flex items-center justify-center">
                     <span className="text-xl">🐕</span>
                   </div>
                   <div>
                     <div className="flex items-center gap-2">
-                      <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-semibold">LOST</span>
-                      <span className="text-xs text-gray-500">2 hours ago</span>
+                      <span className="bg-danger text-white text-xs px-2 py-0.5 rounded-full font-semibold">LOST</span>
+                      <span className="text-xs text-textSecondary">2 hours ago</span>
                     </div>
-                    <p className="font-semibold text-gray-900">Max - Golden Retriever</p>
+                    <p className="font-semibold text-textPrimary">Max - Golden Retriever</p>
                   </div>
                 </div>
-                <p className="text-sm text-gray-600 mb-4">Last seen near Ayala Avenue, Makati. Male, 3 years old, wearing blue collar.</p>
+                <p className="text-sm text-textSecondary mb-4">Last seen near Ayala Avenue, Makati. Male, 3 years old, wearing blue collar.</p>
                 <div className="flex gap-2">
                   <button className="flex-1 bg-primary text-white py-2 rounded-lg text-sm font-medium">I Saw Max!</button>
-                  <button className="flex-1 border border-gray-200 text-gray-600 py-2 rounded-lg text-sm font-medium">Share</button>
+                  <button className="flex-1 border border-border text-textSecondary py-2 rounded-lg text-sm font-medium">Share</button>
                 </div>
-                <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-500">
+                <div className="mt-4 pt-4 border-t border-border flex items-center gap-2 text-xs text-textSecondary">
                   <Bell className="w-3 h-3 text-primary" />
                   <span>14 people within 2km have been notified</span>
                 </div>
@@ -58,7 +58,7 @@ export default function LostFoundSection() {
           {/* Content */}
           <div>
             <h2 className="section-title">Reunite lost pets faster</h2>
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-textSecondary mb-8">
               Our GPS-powered Lost &amp; Found network helps reunite pets with their families through community alerts and smart geofencing.
             </p>
 
@@ -74,8 +74,8 @@ export default function LostFoundSection() {
                       <Icon className="w-5 h-5" style={{ color: item.color }} />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 mb-1">{item.title}</h3>
-                      <p className="text-gray-600 text-sm">{item.description}</p>
+                      <h3 className="font-semibold text-textPrimary mb-1">{item.title}</h3>
+                      <p className="text-textSecondary text-sm">{item.description}</p>
                     </div>
                   </div>
                 )

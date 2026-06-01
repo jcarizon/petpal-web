@@ -20,7 +20,7 @@ export default function FeaturesSection() {
             return (
               <div
                 key={feature.title}
-                className="group p-6 rounded-2xl border border-gray-100 hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                className="group p-6 rounded-2xl border border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300"
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-4"
@@ -28,8 +28,8 @@ export default function FeaturesSection() {
                 >
                   <Icon className="w-6 h-6" style={{ color: feature.color }} />
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-lg font-semibold text-textPrimary mb-2">{feature.title}</h3>
+                <p className="text-textSecondary text-sm leading-relaxed">{feature.description}</p>
               </div>
             )
           })}

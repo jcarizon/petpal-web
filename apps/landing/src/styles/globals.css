@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans text-gray-900 bg-white;
+    @apply font-sans text-textPrimary bg-background;
   }
 }
 
@@ -19,9 +19,9 @@
     @apply border-2 border-primary text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors duration-200;
   }
   .section-title {
-    @apply text-3xl md:text-4xl font-bold text-gray-900 mb-4;
+    @apply text-3xl md:text-4xl font-bold text-textPrimary mb-4;
   }
   .section-subtitle {
-    @apply text-lg text-gray-600 max-w-2xl mx-auto;
+    @apply text-lg text-textSecondary max-w-2xl mx-auto;
   }
 }

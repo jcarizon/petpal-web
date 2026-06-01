@@ -20,7 +20,7 @@ export const FEATURES = [
     icon: 'MapPin',
     title: 'Find Services',
     description: 'Discover verified vets, groomers, and pet hotels near you with real reviews.',
-    color: '#8B5CF6',
+    color: '#3B82F6',
   },
   {
     icon: 'Search',

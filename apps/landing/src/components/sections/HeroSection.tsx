@@ -3,20 +3,19 @@ import { APP_TAGLINE, APP_DESCRIPTION } from '../../lib/constants'
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-purple-50 via-white to-purple-50 overflow-hidden">
-      {/* Background decoration */}
+    <section className="relative bg-gradient-to-br from-heroGradientStart via-heroGradientEnd to-primary-light overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-heroGradientStart/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-primary-bg text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <Star className="w-4 h-4 fill-primary" />
               Trusted by 10,000+ pet owners
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-textPrimary leading-tight mb-6">
               {APP_TAGLINE.split("'").map((part, i, arr) =>
                 i < arr.length - 1 ? (
                   <span key={i}>
@@ -25,7 +24,7 @@ export default function HeroSection() {
                 ) : part
               )}
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
+            <p className="text-xl text-textSecondary leading-relaxed mb-8">
               {APP_DESCRIPTION}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -50,10 +49,10 @@ export default function HeroSection() {
               <div>
                 <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-4 h-4 fill-secondary-light text-secondary-light" />
                   ))}
                 </div>
-                <p className="text-sm text-gray-600">4.9/5 from 2,000+ reviews</p>
+                <p className="text-sm text-textSecondary">4.9/5 from 2,000+ reviews</p>
               </div>
             </div>
           </div>
@@ -63,7 +62,7 @@ export default function HeroSection() {
             <div className="relative">
               <div className="w-64 h-[500px] bg-gray-900 rounded-[3rem] shadow-2xl overflow-hidden border-4 border-gray-800 relative">
                 {/* Phone screen */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-dark flex flex-col items-center justify-center p-8 text-white text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-heroGradientStart to-primary flex flex-col items-center justify-center p-8 text-white text-center">
                   <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
                     <span className="text-3xl">🐾</span>
                   </div>
