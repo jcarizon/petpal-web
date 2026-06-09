@@ -1,4 +1,4 @@
-export const APP_NAME = 'PetPal';
+export const APP_NAME = 'PawRok';
 export const APP_TAGLINE = "Never forget your pet's health";
 export const APP_DESCRIPTION = 'Track health, find trusted services, and connect with the pet community.';
 
@@ -37,7 +37,7 @@ export const FEATURES = [
 ];
 
 export const HOW_IT_WORKS = [
-  { step: 1, title: 'Download PetPal', description: 'Available on iOS and Android. Free to download.' },
+  { step: 1, title: 'Download PawRok', description: 'Available on iOS and Android. Free to download.' },
   { step: 2, title: 'Add Your Pet', description: 'Create a profile with your pet\'s details, photos, and health history.' },
   { step: 3, title: 'Set Reminders', description: 'Never miss vaccinations, medications, or vet appointments again.' },
   { step: 4, title: 'Join the Community', description: 'Connect with pet owners, find trusted services, and earn rewards.' },
@@ -82,7 +82,7 @@ export const BADGES = [
   { name: 'Community Helper', icon: '🤝', description: 'Helped 5 lost pets' },
   { name: 'Early Bird', icon: '🌅', description: 'First to post in community' },
   { name: 'Pet Expert', icon: '🎓', description: 'Shared 10 helpful tips' },
-  { name: 'Loyal Owner', icon: '❤️', description: '1 year on PetPal' },
+  { name: 'Loyal Owner', icon: '❤️', description: '1 year on PawRok' },
 ];
 
 export const LEADERBOARD = [

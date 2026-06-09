@@ -1,6 +1,6 @@
-# 🐾 PetPal Web
+# 🐾 PawRok Web
 
-Web monorepo for PetPal — the pet health tracking and community platform.
+Web monorepo for PawRok — the pet health tracking and community platform.
 
 ## Apps
 
@@ -37,7 +37,7 @@ Copy `.env.example` to `.env` in each app:
 
 ```
 VITE_API_URL=http://localhost:3000/api
-VITE_APP_NAME=PetPal
+VITE_APP_NAME=PawRok
 VITE_ENVIRONMENT=development
 ```
 
@@ -49,5 +49,5 @@ Both apps are independently deployable on Vercel:
 
 ## Admin Login (Demo)
 
-- Email: `admin@petpal.com`
+- Email: `admin@pawrok.com`
 - Password: `admin123`

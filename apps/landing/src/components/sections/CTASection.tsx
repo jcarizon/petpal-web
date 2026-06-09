@@ -8,7 +8,7 @@ export default function CTASection() {
           Download {APP_NAME} for free
         </h2>
         <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-          Join 10,000+ pet owners who trust PetPal to keep their pets healthy and happy.
+          Join 10,000+ pet owners who trust PawRok to keep their pets healthy and happy.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

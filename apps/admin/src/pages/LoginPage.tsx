@@ -6,7 +6,7 @@ import { useAuthStore } from '../store/authStore'
 export default function LoginPage() {
   const navigate = useNavigate()
   const login = useAuthStore((s) => s.login)
-  const [email, setEmail] = useState('admin@petpal.com')
+  const [email, setEmail] = useState('admin@pawrok.com')
   const [password, setPassword] = useState('admin123')
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -20,7 +20,7 @@ export default function LoginPage() {
     // Mock auth — replace with: POST /api/auth/login
     await new Promise((r) => setTimeout(r, 800))
 
-    if (email === 'admin@petpal.com' && password === 'admin123') {
+    if (email === 'admin@pawrok.com' && password === 'admin123') {
       login(
         { id: '1', name: 'Admin User', email, role: 'super_admin' },
         'mock-jwt-token-12345'
@@ -39,7 +39,7 @@ export default function LoginPage() {
           <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
             <PawPrint className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900">PetPal Admin</h1>
+          <h1 className="text-2xl font-bold text-gray-900">PawRok Admin</h1>
           <p className="text-gray-500 text-sm mt-1">Sign in to your admin account</p>
         </div>
 
@@ -53,7 +53,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                placeholder="admin@petpal.com"
+                placeholder="admin@pawrok.com"
               />
             </div>
             <div>
@@ -91,7 +91,7 @@ export default function LoginPage() {
           </form>
 
           <p className="text-center text-xs text-gray-500 mt-4">
-            Demo credentials: admin@petpal.com / admin123
+            Demo credentials: admin@pawrok.com / admin123
           </p>
         </div>
       </div>

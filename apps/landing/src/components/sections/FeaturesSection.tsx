@@ -10,7 +10,7 @@ export default function FeaturesSection() {
         <div className="text-center mb-16">
           <h2 className="section-title">Everything your pet needs</h2>
           <p className="section-subtitle mx-auto">
-            PetPal brings together all the tools you need to be the best pet parent possible.
+            PawRok brings together all the tools you need to be the best pet parent possible.
           </p>
         </div>
 

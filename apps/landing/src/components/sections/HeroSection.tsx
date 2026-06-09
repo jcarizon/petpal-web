@@ -66,7 +66,7 @@ export default function HeroSection() {
                   <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
                     <span className="text-3xl">🐾</span>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">PetPal</h3>
+                  <h3 className="text-2xl font-bold mb-2">PawRok</h3>
                   <p className="text-sm text-white/80 mb-6">Your pet's health companion</p>
                   <div className="space-y-3 w-full">
                     {['💉 Vaccination due in 3 days', '🏥 Vet appointment tomorrow', '🏆 New badge earned!'].map((item) => (
